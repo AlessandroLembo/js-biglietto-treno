@@ -35,12 +35,16 @@ const unitPrice = 0.21;
 
 // 3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
 const distance = parseInt(prompt("Quanti chilometri devi percorrere?", 150).trim());
-console.log("$" + distance);
+console.log("£" + distance);
 
 // 4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
 const grossPrice = unitPrice * distance;
-console.log("il prezzo lordo è:" + ' ' + "$" + grossPrice);
+// console.log("il prezzo lordo è:" + ' ' + "£" + grossPrice);
+console.log(`il prezzo lordo è £ ${grossPrice}`);
 
 // 5 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
 const userAge = parseInt(prompt("Quanti anni hai?", 30).trim());
-console.log("la mia età è:" + ' ' + userAge + ' ' + "anni");
+// console.log("la tua età è:" + ' ' + userAge + ' ' + "anni");
+console.log(`la tua età è ${userAge} anni`);
+
+// 6 - In base all'età verficare se l'utente ha diritto a uno sconto.
