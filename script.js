@@ -14,12 +14,25 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 ANALISI
 1 - Prendere l'elemento dalla pagina.
-2 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
-3 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
-4 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
-5 - In base all'età verficare se l'utente ha diritto a uno sconto:
+2 - Creare una variabile per il prezzo del biglietto per chilometro. 
+3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
+4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
+5 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
+6 - In base all'età verficare se l'utente ha diritto a uno sconto:
     -- l'utente ha un'età compresa tra i 19 e i 64 anni: nessuno sconto.
     -- l'utente ha un'età minore o uguale ai 18 anni: calcola lo sconto del 20%.
     -- l'utente ha un'età maggiore o uguale a 65 anni: calcola lo sconto del 40%.
-6 - Stampare il prezzo totale del viaggio.
+7 - Stampare il prezzo totale del viaggio.
 */
+
+// SVOGLIMENTO
+// 1 - Prendere l'elemento dalla pagina
+const priceTicket = document.getElementById("price");
+console.log(priceTicket);
+
+// 2 - Creare una variabile per il prezzo del biglietto per chilometro.
+const unitPrice = 0.21;
+
+// 3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
+const distance = parseInt(prompt("Quanti chilometri devi percorrere?", 150).trim());
+console.log(distance);
