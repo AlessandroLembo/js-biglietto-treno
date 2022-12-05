@@ -36,3 +36,7 @@ const unitPrice = 0.21;
 // 3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
 const distance = parseInt(prompt("Quanti chilometri devi percorrere?", 150).trim());
 console.log(distance);
+
+// 4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
+const grossPrice = unitPrice * distance;
+console.log(grossPrice);
