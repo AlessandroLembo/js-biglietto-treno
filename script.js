@@ -16,8 +16,8 @@ ANALISI
 1 - Prendere l'elemento dalla pagina.
 2 - Creare una variabile per il prezzo del biglietto per chilometro. 
 3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
-4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
-5 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
+4 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
+5 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
 6 - In base all'età verficare se l'utente ha diritto a uno sconto:
     -- l'utente ha un'età compresa tra i 19 e i 64 anni: nessuno sconto.
     -- l'utente ha un'età minore o uguale ai 18 anni: calcola lo sconto del 20%.
@@ -42,7 +42,7 @@ if (isNaN(distance)){
 } else {
     console.log(`la distanza da percorrere è di ${distance} km`)
     
-    // 5 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
+    // 4 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
     const userAge = parseInt(prompt("Quanti anni hai?", 30).trim())
    
     if (isNaN(userAge)){
@@ -51,25 +51,26 @@ if (isNaN(distance)){
     } else {
         console.log(`la tua età è ${userAge} anni`)
     
-    // 4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
-    const grossPrice = (unitPrice * distance).toFixed(2);
-    //// console.log("il prezzo lordo è:" + ' ' + "£" + grossPrice);
-    console.log(`il prezzo lordo è £ ${grossPrice}`)
-
-    // 6 - In base all'età verficare se l'utente ha diritto a uno sconto.
-    if (userAge > 18 && userAge < 65) {
-        console.log(`Il prezzo da pagare è £ ${grossPrice}`)
-        priceTicket.innerText = (`Il prezzo da pagare è £ ${grossPrice}`)
-    } else if (userAge < 19){
-        const youngPrice = ((grossPrice / 100) * 80).toFixed(2);
-        console.log(`Il prezzo per i minorenni è di ${youngPrice}`)
-
-        priceTicket.innerText = (`Il prezzo per i minorenni è di £ ${youngPrice}`)
-    } else {
-        const oldPrice = ((grossPrice / 100) * 60).toFixed(2);
-        console.log(`Il prezzo per gli over 65 è di ${oldPrice}`)
-        priceTicket.innerText = (`Il prezzo per gli over 65 è di £ ${oldPrice}`)
-    }
+        // 5 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
+        const grossPrice = (unitPrice * distance).toFixed(2);
+        //// console.log("il prezzo lordo è:" + ' ' + "£" + grossPrice);
+        console.log(`il prezzo lordo è £ ${grossPrice}`)
+    
+        /* 6e7 - In base all'età verficare se l'utente ha diritto a uno sconto.
+               - Stampare il prezzo totale del viaggio. */
+        if (userAge > 18 && userAge < 65) {
+            console.log(`Il prezzo da pagare è £ ${grossPrice}`)
+            priceTicket.innerText = (`Il prezzo da pagare è £ ${grossPrice}`)
+        } else if (userAge < 19){
+            const youngPrice = ((grossPrice / 100) * 80).toFixed(2);
+            console.log(`Il prezzo per i minorenni è di ${youngPrice}`)
+    
+            priceTicket.innerText = (`Il prezzo per i minorenni è di £ ${youngPrice}`)
+        } else {
+            const oldPrice = ((grossPrice / 100) * 60).toFixed(2);
+            console.log(`Il prezzo per gli over 65 è di ${oldPrice}`)
+            priceTicket.innerText = (`Il prezzo per gli over 65 è di £ ${oldPrice}`)
+        }
 
     }
 
