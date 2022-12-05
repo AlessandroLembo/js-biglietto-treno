@@ -35,33 +35,37 @@ const unitPrice = 0.21;
 
 // 3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
 const distance = parseInt(prompt("Quanti chilometri devi percorrere?", 150).trim());
-// console.log(`la distanza da percorrere è di ${distance} km`);
 
-if(isNaN(distance)){
+if (isNaN(distance)){
     alert("devi inserire solo valori numerici interi")
-} else{
+    location.reload();
+} else {
     console.log(`la distanza da percorrere è di ${distance} km`);
     
     // 5 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
     const userAge = parseInt(prompt("Quanti anni hai?", 30).trim());
-    //// console.log("la tua età è:" + ' ' + userAge + ' ' + "anni");
-    // console.log(`la tua età è ${userAge} anni`);
-
-    if(isNaN(userAge)){
+   
+    if (isNaN(userAge)){
         alert("inserisci la tua età correttamente")
-    } else{
+        location.reload();
+    } else {
         console.log(`la tua età è ${userAge} anni`);
-    }
-      
     
     // 4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
-    // const grossPrice = unitPrice * distance;
+    const grossPrice = unitPrice * distance;
     //// console.log("il prezzo lordo è:" + ' ' + "£" + grossPrice);
-    // console.log(`il prezzo lordo è £ ${grossPrice}`);
-    
+    console.log(`il prezzo lordo è £ ${grossPrice}`);
+
     // 6 - In base all'età verficare se l'utente ha diritto a uno sconto.
-    // if (!(userAge < 19 && userAge > 64)){
-        // console.log(`il prezzo da pagare è £ ${grossPrice}`);
+    if (userAge > 18 && userAge < 65) {
+        console.log(`il prezzo da pagare è £ ${grossPrice}`)
+    } else if (userAge < 19){
+        const youngPrice = ((grossPrice / 100) * 80); 
+        console.log(`il prezzo per i minorenni è di ${youngPrice}`);
+    } else {
+        const oldPrice = ((grossPrice / 100) * 60);
+        console.log(`il prezzo per gli over 65 è di ${oldPrice}`);
+    }
+    }
+
 }
-
-
