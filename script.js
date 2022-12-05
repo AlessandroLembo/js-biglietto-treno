@@ -38,34 +38,39 @@ const distance = parseInt(prompt("Quanti chilometri devi percorrere?", 150).trim
 
 if (isNaN(distance)){
     alert("devi inserire solo valori numerici interi")
-    location.reload();
+    location.reload()
 } else {
-    console.log(`la distanza da percorrere è di ${distance} km`);
+    console.log(`la distanza da percorrere è di ${distance} km`)
     
     // 5 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
-    const userAge = parseInt(prompt("Quanti anni hai?", 30).trim());
+    const userAge = parseInt(prompt("Quanti anni hai?", 30).trim())
    
     if (isNaN(userAge)){
         alert("inserisci la tua età correttamente")
         location.reload();
     } else {
-        console.log(`la tua età è ${userAge} anni`);
+        console.log(`la tua età è ${userAge} anni`)
     
     // 4 - Calcolare il prezzo del bioglietto in base ai chilometri (0.21 € al Km).
-    const grossPrice = unitPrice * distance;
+    const grossPrice = (unitPrice * distance).toFixed(2);
     //// console.log("il prezzo lordo è:" + ' ' + "£" + grossPrice);
-    console.log(`il prezzo lordo è £ ${grossPrice}`);
+    console.log(`il prezzo lordo è £ ${grossPrice}`)
 
     // 6 - In base all'età verficare se l'utente ha diritto a uno sconto.
     if (userAge > 18 && userAge < 65) {
-        console.log(`il prezzo da pagare è £ ${grossPrice}`)
+        console.log(`Il prezzo da pagare è £ ${grossPrice}`)
+        priceTicket.innerText = (`Il prezzo da pagare è £ ${grossPrice}`)
     } else if (userAge < 19){
-        const youngPrice = ((grossPrice / 100) * 80); 
-        console.log(`il prezzo per i minorenni è di ${youngPrice}`);
+        const youngPrice = ((grossPrice / 100) * 80).toFixed(2);
+        console.log(`Il prezzo per i minorenni è di ${youngPrice}`)
+
+        priceTicket.innerText = (`Il prezzo per i minorenni è di £ ${youngPrice}`)
     } else {
-        const oldPrice = ((grossPrice / 100) * 60);
-        console.log(`il prezzo per gli over 65 è di ${oldPrice}`);
+        const oldPrice = ((grossPrice / 100) * 60).toFixed(2);
+        console.log(`Il prezzo per gli over 65 è di ${oldPrice}`)
+        priceTicket.innerText = (`Il prezzo per gli over 65 è di £ ${oldPrice}`)
     }
+
     }
 
 }
