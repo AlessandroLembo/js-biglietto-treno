@@ -38,7 +38,6 @@ const distance = parseInt(prompt("Quanti chilometri devi percorrere?", 150).trim
 
 if (isNaN(distance)){
     alert("devi inserire solo valori numerici interi")
-    location.reload()
 } else {
     console.log(`la distanza da percorrere è di ${distance} km`)
     
@@ -47,7 +46,6 @@ if (isNaN(distance)){
    
     if (isNaN(userAge)){
         alert("inserisci la tua età correttamente")
-        location.reload();
     } else {
         console.log(`la tua età è ${userAge} anni`)
     
